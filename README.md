@@ -2,6 +2,8 @@
 
 Retail demand forecasting and inventory analytics using Python, SQL, and machine learning.
 
+[Live app](https://demandlens.streamlit.app/) · [Experiment report](artifacts/experiment_report.md) · [Interview guide](docs/interview-guide.md)
+
 DemandLens forecasts **recorded unit sales** for seven days across a development-selected cohort of up to 20 products. It compares a direct horizon-conditioned gradient-boosting model with four simple baselines, then uses the validation-selected model for transparent inventory scenarios. The Streamlit application reads compact precomputed artifacts; it never downloads data or trains during a page request.
 
 ## Run the included demo
@@ -32,7 +34,7 @@ The original audit exposed a cancelled bulk order and a missing robust baseline.
 
 The median's WAPE is 12.56% lower relative to the trailing mean on the revised cohort. It beats boosting for 12/20 products and 8/9 windows. **The median substantially underpredicts volume:** its bias is -44.29 units per product-day. Minimizing absolute error favors medians, which can undershoot rare large sales. It is an error-minimizing baseline, not a guarantee of adequate inventory; no cost or stockout optimization is claimed.
 
-The cleaning audit identifies 454 unique full same-day reversal pairs and removes 85,766 merchandise units from positive sales before the final excluded day. Product 23166 leaves the selected cohort and product 22151 enters. The bundle is about 3.32 MB. Original artifacts are retained in artifacts/history/v1; cross-version scores are not a model-only improvement because both the target and cohort changed.
+The cleaning audit identifies 454 unique full same-day reversal pairs and removes 85,766 merchandise units from positive sales before the final excluded day. Product 23166 leaves the selected cohort and product 22151 enters. The bundle is about 3.32 MB. The original experiment report is retained in artifacts/history/v1; original binary artifacts remain in Git history and local working storage. Cross-version scores are not a model-only improvement because both the target and cohort changed.
 
 ## Reproduce the experiment
 
@@ -99,7 +101,7 @@ Unique full same-day reversals remove the original positive sale when customer, 
 .\.venv\Scripts\python.exe -m pytest -q
 ```
 
-Tests cover cleaning, deterministic selection, temporal leakage, feature arithmetic, baseline forecasts, model selection, zero-denominator metrics, inventory input validation, SQL/Pandas agreement, bundle checksums, and Streamlit page/form interactions. GitHub Actions runs the suite on Python 3.11. CI is configured locally; no remote CI result is claimed.
+Tests cover cleaning, deterministic selection, temporal leakage, feature arithmetic, baseline forecasts, model selection, zero-denominator metrics, inventory input validation, SQL/Pandas agreement, bundle checksums, and Streamlit page/form interactions. GitHub Actions runs the suite on Python 3.11. The deployed release passed all 47 tests on Windows and [GitHub Actions on Linux](https://github.com/Tirthpanchori/DemandLens/actions).
 
 `constraints.txt` pins the dependency versions installed in the isolated verification environment. It constrains both runtime and development installation without adding development tools to the app's required packages.
 
@@ -109,7 +111,22 @@ The executed notebook `notebooks/01_sales_analysis.ipynb` uses prepared pipeline
 
 Push this repository, including `demo/` and `sql/`, to GitHub. In Streamlit Community Cloud choose the repository, `app.py`, and Python 3.11. Dependencies are declared in the root `requirements.txt`. No secrets or external database are required. The `.streamlit/config.toml` file supplies the theme and disables usage statistics.
 
-Keep `data/raw/`, `data/processed/`, the virtual environment, and local runtime logs out of Git. The bundle must pass its schema, checksum, and SQLite integrity checks. Rebuild it locally to update the demo. Public hosting requires the owner's GitHub/Streamlit account connection and has not been performed merely by generating the bundle.
+Keep `data/raw/`, `data/processed/`, the virtual environment, intermediate reports, and local runtime logs out of Git. The bundle must pass its schema, checksum, and SQLite integrity checks. Rebuild it locally to update the demo. The public app is hosted at https://demandlens.streamlit.app/.
+
+## Repository layout
+
+| Folder | Purpose |
+|---|---|
+| `demandlens/` | Data preparation, forecasting, evaluation, and inventory logic |
+| `demo/` | Small verified deployment database and metadata; required by the app |
+| `sql/` | Named analytical queries |
+| `tests/` | Data, forecasting, inventory, SQL, and app checks |
+| `notebooks/` | Executed exploratory analysis |
+| `docs/` | Decisions, data dictionary, and interview explanations |
+| `artifacts/` | Current results, per-product comparison, and original experiment report |
+| `scripts/` | Rebuild the executed notebook |
+
+Raw data, intermediate pipeline outputs, duplicate metadata, obsolete database snapshots, screenshots, and local test logs are excluded from the current repository. They can remain locally without being uploaded. A fresh clone can run the included demo immediately after installing dependencies; reproducing training starts with the preparation command.
 
 ## Limits and roadmap
 

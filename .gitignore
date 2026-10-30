@@ -10,3 +10,13 @@ artifacts/models/
 
 # Screenshots from earlier interfaces are local review material.
 artifacts/screenshots/
+
+# Regenerable intermediate reports and local verification logs.
+# The app uses the self-contained demo/ bundle instead.
+artifacts/cleaning_report.json
+artifacts/evaluation.json
+artifacts/test-results.txt
+artifacts/training_code_inspection.csv
+artifacts/verification.json
+artifacts/history/v1/*.json
+artifacts/history/v1/*.sqlite
