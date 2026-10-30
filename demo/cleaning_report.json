@@ -1,0 +1,95 @@
+{
+  "raw_rows": 541909,
+  "retained_sales_rows": 525712,
+  "missing_values": {
+    "Country": 0,
+    "CustomerID": 135080,
+    "Description": 1454,
+    "InvoiceDate": 0,
+    "InvoiceNo": 0,
+    "Quantity": 0,
+    "StockCode": 0,
+    "UnitPrice": 0
+  },
+  "duplicate_looking_rows_retained_by_policy": 5268,
+  "retained_sales_duplicate_rows": 5214,
+  "rules": [
+    {
+      "rule": "invalid_required_values",
+      "affected_rows": 0,
+      "before": 541909,
+      "after": 541909
+    },
+    {
+      "rule": "returns_or_cancellations",
+      "affected_rows": 10624,
+      "before": 541909,
+      "after": 531285
+    },
+    {
+      "rule": "matched_same_day_reversal",
+      "affected_rows": 454,
+      "before": 531285,
+      "after": 530831
+    },
+    {
+      "rule": "zero_quantity_or_nonpositive_price",
+      "affected_rows": 1181,
+      "before": 530831,
+      "after": 529650
+    },
+    {
+      "rule": "non_merchandise",
+      "affected_rows": 2321,
+      "before": 529650,
+      "after": 527329
+    },
+    {
+      "rule": "final_recorded_date",
+      "affected_rows": 1617,
+      "before": 527329,
+      "after": 525712
+    }
+  ],
+  "source_start": "2010-12-01",
+  "source_end": "2011-12-09",
+  "complete_through_policy": "2011-12-08",
+  "large_order_threshold_training_p995": 192.0,
+  "large_sales_rows_retained": 2167,
+  "non_merchandise_policy_version": 1,
+  "non_merchandise_codes": [
+    "ADJUST",
+    "ADJUST2",
+    "AMAZONFEE",
+    "B",
+    "BANK CHARGES",
+    "C2",
+    "CRUK",
+    "D",
+    "DOT",
+    "M",
+    "PADS",
+    "POST",
+    "S",
+    "TEST001",
+    "TEST002"
+  ],
+  "non_merchandise_prefixes": [
+    "gift_"
+  ],
+  "cleaning_policy_version": 2,
+  "cancellation_policy": "Unique full same-day reversal; same known customer, product, quantity, price; cancellation strictly later; ambiguous/partial/cross-day returns remain separate.",
+  "matched_reversal_pairs": 454,
+  "matched_reversal_units": 166825.0,
+  "matched_merchandise_units_removed": 85766.0,
+  "source_url": "https://archive.ics.uci.edu/static/public/352/online+retail.zip",
+  "source_page": "https://archive.ics.uci.edu/dataset/352/online+retail",
+  "doi": "10.24432/C5BW33",
+  "license": "CC BY 4.0",
+  "workbook_sha256": "43465a06f2ccf7c8b5bd2892bc7defb52f97487934fe93b16ae4c3936424676d",
+  "retrieved_at_utc": "2026-10-30T11:06:33.893565+00:00",
+  "prepared_at_utc": "2026-10-30T12:01:15.381333+00:00",
+  "selection_cutoff": "2011-08-31",
+  "selected_products": 20,
+  "selected_units_share": 0.10381434203276191
+}

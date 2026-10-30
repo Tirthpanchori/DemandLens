@@ -1,0 +1,12 @@
+{
+  "schema_version": 1,
+  "run_id": "43465a06f2cc-0ce2c57bbd29",
+  "champion": "trailing_median",
+  "final_origin": "2011-12-09",
+  "files": {
+    "demandlens.sqlite": "44df8176be2be88d980a7af2d868df4727842962c6afe87e91a208f47a4c5ffe",
+    "cleaning_report.json": "020fbf6a368148d4ecb9e17e2aab0e0de9dbeb317f66e1c0798d1feb1c1b92d4",
+    "evaluation.json": "37e48e2412ef7f606711a70c73bfb1ce1998324af3379489f20780e893e4a1bd"
+  },
+  "bundle_bytes": 3319235
+}

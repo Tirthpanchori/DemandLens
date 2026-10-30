@@ -1,0 +1,12 @@
+{
+  "schema_version": 1,
+  "run_id": "43465a06f2cc-9f55816d25ce",
+  "champion": "hgb_15",
+  "final_origin": "2011-12-09",
+  "files": {
+    "demandlens.sqlite": "67155af1ef1e2fea77aa7eb63ee3081b779e14adade07cfff3c6c0c61ab2b977",
+    "cleaning_report.json": "2447d3f886676d528ad8daad5d379f124c50bce0253c7c588ed4d9fef687a927",
+    "evaluation.json": "f269ad7718e7e1df2a8c9b8fa0716250ca859d451030e189679d80c74f2934ac"
+  },
+  "bundle_bytes": 2273543
+}

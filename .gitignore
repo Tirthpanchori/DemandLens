@@ -1,0 +1,12 @@
+.venv/
+__pycache__/
+.pytest_cache/
+*.pyc
+data/raw/
+data/processed/
+work/
+.streamlit/secrets.toml
+artifacts/models/
+
+# Screenshots from earlier interfaces are local review material.
+artifacts/screenshots/

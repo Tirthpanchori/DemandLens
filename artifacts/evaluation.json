@@ -1,0 +1,104 @@
+{
+  "schema_version": 1,
+  "run_id": "43465a06f2cc-0ce2c57bbd29",
+  "source_sha256": "43465a06f2ccf7c8b5bd2892bc7defb52f97487934fe93b16ae4c3936424676d",
+  "code_sha256": "0ce2c57bbd29bf60574597512ec6a140f3c3d8b012c1b1e9cfe0329c31729747",
+  "daily_sales_sha256": "b3152921fdf5edf884afdf2305c64fdf9f6e1d4e4ca5979ef908324f83ddeac2",
+  "products_sha256": "16d68bf2552169fd77b49405122b264f085e714c76a49f3aecbe6dee3eae9d07",
+  "evaluated_at_utc": "2026-10-30T12:02:14.477391+00:00",
+  "final_origin": "2011-12-09",
+  "champion": "trailing_median",
+  "boosting_model": "hgb_15",
+  "selection_metric": "validation WAPE, then MAE, then baseline simplicity",
+  "validation_ranking": [
+    {
+      "model": "trailing_median",
+      "mae": 62.42,
+      "wape": 85.12205100231829,
+      "bias": -41.46,
+      "actual_units": 51331.0,
+      "n": 700
+    },
+    {
+      "model": "hgb_15",
+      "mae": 64.00556362082598,
+      "wape": 87.28428149573979,
+      "bias": -10.270742258736199,
+      "actual_units": 51331.0,
+      "n": 700
+    },
+    {
+      "model": "hgb_31",
+      "mae": 65.99109273535173,
+      "wape": 89.99194427294658,
+      "bias": -9.937695510835129,
+      "actual_units": 51331.0,
+      "n": 700
+    },
+    {
+      "model": "trailing_mean",
+      "mae": 72.49423469387756,
+      "wape": 98.86026823111627,
+      "bias": -1.538928571428572,
+      "actual_units": 51331.0,
+      "n": 700
+    },
+    {
+      "model": "weekday_mean4",
+      "mae": 72.59107142857142,
+      "wape": 98.99232432643042,
+      "bias": -1.5389285714285714,
+      "actual_units": 51331.0,
+      "n": 700
+    },
+    {
+      "model": "seasonal_naive",
+      "mae": 78.45,
+      "wape": 106.98213555161598,
+      "bias": -9.598571428571429,
+      "actual_units": 51331.0,
+      "n": 700
+    }
+  ],
+  "selected_before_test": true,
+  "evaluation_status": "retrospective_revision",
+  "revision_note": "Baseline additions and cancellation policy were motivated by inspecting the original test results. This is a retrospective benchmark, not a fresh untouched holdout.",
+  "baseline_models": [
+    "seasonal_naive",
+    "trailing_mean",
+    "trailing_median",
+    "weekday_mean4"
+  ],
+  "model_parameters": {
+    "categorical_features": "from_dtype",
+    "early_stopping": false,
+    "interaction_cst": null,
+    "l2_regularization": 1.0,
+    "learning_rate": 0.05,
+    "loss": "squared_error",
+    "max_bins": 255,
+    "max_depth": null,
+    "max_features": 1.0,
+    "max_iter": 150,
+    "max_leaf_nodes": 15,
+    "min_samples_leaf": 20,
+    "monotonic_cst": null,
+    "n_iter_no_change": 10,
+    "quantile": null,
+    "random_state": 42,
+    "scoring": "loss",
+    "tol": 1e-07,
+    "validation_fraction": 0.1,
+    "verbose": 0,
+    "warm_start": false
+  },
+  "compared_leaf_nodes": [
+    15,
+    31
+  ],
+  "packages": {
+    "pandas": "3.0.2",
+    "numpy": "2.4.4",
+    "scikit-learn": "1.8.0"
+  }
+}

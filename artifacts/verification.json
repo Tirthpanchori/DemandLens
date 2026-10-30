@@ -1,0 +1,26 @@
+{
+  "verified_at_utc": "2026-10-30T12:10:06.593120+00:00",
+  "run_id": "43465a06f2cc-0ce2c57bbd29",
+  "revision": "2",
+  "evaluation_status": "retrospective_revision",
+  "bundle_bytes": 3319235,
+  "notebook_schema_valid": true,
+  "queries_executed": {
+    "weekly_sales": 1079,
+    "top_products": 20,
+    "weekday_sales": 7,
+    "zero_sales": 20,
+    "variability": 20,
+    "model_metrics": 5,
+    "product_errors": 100,
+    "horizon_errors": 35,
+    "window_errors": 45,
+    "worst_predictions": 20,
+    "cumulative_errors": 900
+  },
+  "app_sha256": "a57fffa88fc9b555ce6265b3517e3e12bf1080bba0acba521357362923ac22e7",
+  "remote_ci_executed": false,
+  "public_deployment": false,
+  "tests": "47 passed in 89.41s",
+  "isolated_environment": true
+}
