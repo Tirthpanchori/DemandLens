@@ -2,7 +2,7 @@
 
 Retail demand forecasting and inventory analytics using Python, SQL, and machine learning.
 
-[Live app](https://demandlens.streamlit.app/) · [Experiment report](artifacts/experiment_report.md) · [Interview guide](docs/interview-guide.md)
+[Live app](https://demandlens.streamlit.app/) · [Experiment report](artifacts/experiment_report.md)
 
 DemandLens forecasts **recorded unit sales** for seven days across a development-selected cohort of up to 20 products. It compares a direct horizon-conditioned gradient-boosting model with four simple baselines, then uses the validation-selected model for transparent inventory scenarios. The Streamlit application reads compact precomputed artifacts; it never downloads data or trains during a page request.
 
