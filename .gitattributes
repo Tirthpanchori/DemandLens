@@ -1,0 +1,3 @@
+# Demo manifests verify exact bytes. Preserve JSON line endings across Git hosts.
+demo/*.json -text
+*.sqlite binary
