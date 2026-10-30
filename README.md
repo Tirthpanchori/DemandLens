@@ -133,7 +133,3 @@ Raw data, intermediate pipeline outputs, duplicate metadata, obsolete database s
 This experiment covers one historical gift retailer and established products selected from development data. Unobserved stockouts, promotions, opening calendars, and bulk orders limit interpretation. It does not estimate unconstrained demand, guarantee stock availability, or prove inventory savings. No confidence intervals or causal effects are claimed.
 
 Next steps: calibrated prediction intervals, explicit simulated inventory policy comparisons, intermittent-sales methods, longer/store-level datasets with availability and promotions, validated CSV ingestion, and scheduled offline artifact refreshes. GenAI is intentionally outside this project's scope.
-
-## Interview preparation
-
-See docs/interview-guide.md for plain-language explanations and examples. The generated experiment report includes original-versus-revised results and failure cases; quote current measurements and explicitly disclose retrospective evaluation.
